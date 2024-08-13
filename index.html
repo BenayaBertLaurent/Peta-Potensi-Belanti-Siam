@@ -41,22 +41,25 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[-7.803916324104299,110.69392405482895],[-7.770619304736207,110.75481125906003]]);
+        })
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
+            if (bounds_group.getLayers().length) {
+                map.fitBounds(bounds_group.getBounds());
+            }
         }
-        map.createPane('pane_PetaSatelitGrogol_modified_0');
-        map.getPane('pane_PetaSatelitGrogol_modified_0').style.zIndex = 400;
-        var img_PetaSatelitGrogol_modified_0 = 'data/PetaSatelitGrogol_modified_0.png';
-        var img_bounds_PetaSatelitGrogol_modified_0 = [[-7.801831882635065,110.68880623522075],[-7.7668700122991545,110.75160145627913]];
-        var layer_PetaSatelitGrogol_modified_0 = new L.imageOverlay(img_PetaSatelitGrogol_modified_0,
-                                              img_bounds_PetaSatelitGrogol_modified_0,
-                                              {pane: 'pane_PetaSatelitGrogol_modified_0'});
-        bounds_group.addLayer(layer_PetaSatelitGrogol_modified_0);
-        map.addLayer(layer_PetaSatelitGrogol_modified_0);
+        map.createPane('pane_PetaSatelitBelantiSiam_modified_0');
+        map.getPane('pane_PetaSatelitBelantiSiam_modified_0').style.zIndex = 400;
+        var img_PetaSatelitBelantiSiam_modified_0 = 'data/PetaSatelitBelantiSiam_modified_0.png';
+        var img_bounds_PetaSatelitBelantiSiam_modified_0 = [[-7.801831882635065,110.68880623522075],[-7.7668700122991545,110.75160145627913]];
+        var layer_PetaSatelitBelantiSiam_modified_0 = new L.imageOverlay(img_PetaSatelitBelantiSiam_modified_0,
+                                              img_bounds_PetaSatelitBelantiSiam_modified_0,
+                                              {pane: 'pane_PetaSatelitBelantiSiam_modified_0'});
+        bounds_group.addLayer(layer_PetaSatelitBelantiSiam_modified_0);
+        map.addLayer(layer_PetaSatelitBelantiSiam_modified_0);
         function pop_Polygon2_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -476,7 +479,7 @@
         bounds_group.addLayer(layer_Point_3);
         map.addLayer(layer_Point_3);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'Point<br /><table><tr><td style="text-align: center;"><img src="legend/Point_3_FasilitasUmum0.png" /></td><td>Fasilitas Umum</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_GedungOlahraga1.png" /></td><td>Gedung Olahraga</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_Pendidikan2.png" /></td><td>Pendidikan</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_PertanianPeternakan3.png" /></td><td>Pertanian/Peternakan</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_TempatIbadah4.png" /></td><td>Tempat Ibadah</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_UMKMAlumuniumKaca5.png" /></td><td>UMKM Alumunium & Kaca</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_UMKMArang6.png" /></td><td>UMKM Arang</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_UMKMDekorasi7.png" /></td><td>UMKM Dekorasi</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_UMKMGenteng8.png" /></td><td>UMKM Genteng</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_UMKMLurik9.png" /></td><td>UMKM Lurik</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_UMKMMebel10.png" /></td><td>UMKM Mebel</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_UMKMPigura11.png" /></td><td>UMKM Pigura</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_UMKMSangkar12.png" /></td><td>UMKM Sangkar</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_UMKMTekstil13.png" /></td><td>UMKM Tekstil</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_UMKMWuwungSeng14.png" /></td><td>UMKM Wuwung Seng</td></tr></table>': layer_Point_3,'Polyline<br /><table><tr><td style="text-align: center;"><img src="legend/Polyline_2_BatasDesa0.png" /></td><td>Batas Desa</td></tr><tr><td style="text-align: center;"><img src="legend/Polyline_2_JalanKabupaten1.png" /></td><td>Jalan Kabupaten</td></tr><tr><td style="text-align: center;"><img src="legend/Polyline_2_Sungai2.png" /></td><td>Sungai</td></tr><tr><td style="text-align: center;"><img src="legend/Polyline_2_JalanDesa3.png" /></td><td>Jalan Desa</td></tr></table>': layer_Polyline_2,'Polygon2<br /><table><tr><td style="text-align: center;"><img src="legend/Polygon2_1_Embung0.png" /></td><td>Embung</td></tr><tr><td style="text-align: center;"><img src="legend/Polygon2_1_Kebun1.png" /></td><td>Kebun</td></tr><tr><td style="text-align: center;"><img src="legend/Polygon2_1_Lapangan2.png" /></td><td>Lapangan</td></tr><tr><td style="text-align: center;"><img src="legend/Polygon2_1_Pemakaman3.png" /></td><td>Pemakaman</td></tr><tr><td style="text-align: center;"><img src="legend/Polygon2_1_Pemukiman4.png" /></td><td>Pemukiman</td></tr><tr><td style="text-align: center;"><img src="legend/Polygon2_1_Sawah5.png" /></td><td>Sawah</td></tr></table>': layer_Polygon2_1,"Peta Satelit Grogol_modified": layer_PetaSatelitGrogol_modified_0,}).addTo(map);
+        L.control.layers(baseMaps,{'Point<br /><table><tr><td style="text-align: center;"><img src="legend/Point_3_FasilitasUmum0.png" /></td><td>Fasilitas Umum</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_GedungOlahraga1.png" /></td><td>Gedung Olahraga</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_Pendidikan2.png" /></td><td>Pendidikan</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_PertanianPeternakan3.png" /></td><td>Pertanian/Peternakan</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_TempatIbadah4.png" /></td><td>Tempat Ibadah</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_UMKMAlumuniumKaca5.png" /></td><td>UMKM Alumunium & Kaca</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_UMKMArang6.png" /></td><td>UMKM Arang</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_UMKMDekorasi7.png" /></td><td>UMKM Dekorasi</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_UMKMGenteng8.png" /></td><td>UMKM Genteng</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_UMKMLurik9.png" /></td><td>UMKM Lurik</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_UMKMMebel10.png" /></td><td>UMKM Mebel</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_UMKMPigura11.png" /></td><td>UMKM Pigura</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_UMKMSangkar12.png" /></td><td>UMKM Sangkar</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_UMKMTekstil13.png" /></td><td>UMKM Tekstil</td></tr><tr><td style="text-align: center;"><img src="legend/Point_3_UMKMWuwungSeng14.png" /></td><td>UMKM Wuwung Seng</td></tr></table>': layer_Point_3,'Polyline<br /><table><tr><td style="text-align: center;"><img src="legend/Polyline_2_BatasDesa0.png" /></td><td>Batas Desa</td></tr><tr><td style="text-align: center;"><img src="legend/Polyline_2_JalanKabupaten1.png" /></td><td>Jalan Kabupaten</td></tr><tr><td style="text-align: center;"><img src="legend/Polyline_2_Sungai2.png" /></td><td>Sungai</td></tr><tr><td style="text-align: center;"><img src="legend/Polyline_2_JalanDesa3.png" /></td><td>Jalan Desa</td></tr></table>': layer_Polyline_2,'Polygon2<br /><table><tr><td style="text-align: center;"><img src="legend/Polygon2_1_Embung0.png" /></td><td>Embung</td></tr><tr><td style="text-align: center;"><img src="legend/Polygon2_1_Kebun1.png" /></td><td>Kebun</td></tr><tr><td style="text-align: center;"><img src="legend/Polygon2_1_Lapangan2.png" /></td><td>Lapangan</td></tr><tr><td style="text-align: center;"><img src="legend/Polygon2_1_Pemakaman3.png" /></td><td>Pemakaman</td></tr><tr><td style="text-align: center;"><img src="legend/Polygon2_1_Pemukiman4.png" /></td><td>Pemukiman</td></tr><tr><td style="text-align: center;"><img src="legend/Polygon2_1_Sawah5.png" /></td><td>Sawah</td></tr></table>': layer_Polygon2_1,"Peta Satelit Grogol_modified": layer_PetaSatelitBelantiSiam_modified_0,},{collapsed:false}).addTo(map);
         setBounds();
         var mapDiv = document.getElementById('map');
         var row = document.createElement('div');
@@ -497,7 +500,7 @@
         document.getElementById("all").appendChild(col1);
         document.getElementById("all").appendChild(col2);
         col1.appendChild(mapDiv)
-        var Filters = {"Kategori": "str","Legenda": "str"};
+        var Filters = {"Lokasi": "str"};
         function filterFunc() {
           map.eachLayer(function(lyr){
           if ("options" in lyr && "dataVar" in lyr["options"]){
@@ -589,86 +592,153 @@
         }
             document.getElementById("menu").appendChild(
                 document.createElement("div"));
-            var div_Kategori = document.createElement('div');
-            div_Kategori.id = "div_Kategori";
-            div_Kategori.className= "filterselect";
-            document.getElementById("menu").appendChild(div_Kategori);
-            sel_Kategori = document.createElement('select');
-            sel_Kategori.multiple = true;
-            sel_Kategori.size = 10;
-            sel_Kategori.id = "sel_Kategori";
-            var Kategori_options_str = "<option value='' unselected></option>";
-            sel_Kategori.onchange = function(){filterFunc()};
-            Kategori_options_str  += '<option value="Fasilitas Umum">Fasilitas Umum</option>';
-            Kategori_options_str  += '<option value="Gedung Olahraga">Gedung Olahraga</option>';
-            Kategori_options_str  += '<option value="Pendidikan">Pendidikan</option>';
-            Kategori_options_str  += '<option value="Pertanian/Peternakan">Pertanian/Peternakan</option>';
-            Kategori_options_str  += '<option value="Tempat Ibadah">Tempat Ibadah</option>';
-            Kategori_options_str  += '<option value="UMKM Alumunium & Kaca">UMKM Alumunium & Kaca</option>';
-            Kategori_options_str  += '<option value="UMKM Arang">UMKM Arang</option>';
-            Kategori_options_str  += '<option value="UMKM Dekorasi">UMKM Dekorasi</option>';
-            Kategori_options_str  += '<option value="UMKM Genteng">UMKM Genteng</option>';
-            Kategori_options_str  += '<option value="UMKM Lurik">UMKM Lurik</option>';
-            Kategori_options_str  += '<option value="UMKM Mebel">UMKM Mebel</option>';
-            Kategori_options_str  += '<option value="UMKM Pigura">UMKM Pigura</option>';
-            Kategori_options_str  += '<option value="UMKM Sangkar">UMKM Sangkar</option>';
-            Kategori_options_str  += '<option value="UMKM Tekstil">UMKM Tekstil</option>';
-            Kategori_options_str  += '<option value="UMKM Wuwung Seng">UMKM Wuwung Seng</option>';
-            sel_Kategori.innerHTML = Kategori_options_str;
-            div_Kategori.appendChild(sel_Kategori);
-            var lab_Kategori = document.createElement('div');
-            lab_Kategori.innerHTML = 'Kategori';
-            lab_Kategori.className = 'filterlabel';
-            div_Kategori.appendChild(lab_Kategori);
-            var reset_Kategori = document.createElement('div');
-            reset_Kategori.innerHTML = 'clear filter';
-            reset_Kategori.className = 'filterlabel';
-            reset_Kategori.onclick = function() {
-                var options = document.getElementById("sel_Kategori").options;
+            var div_Lokasi = document.createElement('div');
+            div_Lokasi.id = "div_Lokasi";
+            div_Lokasi.className= "filterselect";
+            document.getElementById("menu").appendChild(div_Lokasi);
+            sel_Lokasi = document.createElement('select');
+            sel_Lokasi.multiple = true;
+            sel_Lokasi.size = 10;
+            sel_Lokasi.id = "sel_Lokasi";
+            var Lokasi_options_str = "<option value='' unselected></option>";
+            sel_Lokasi.onchange = function(){filterFunc()};
+            Lokasi_options_str  += '<option value="Alifa Tekstil">Alifa Tekstil</option>';
+            Lokasi_options_str  += '<option value="BA Aisyiyah Grogol I">BA Aisyiyah Grogol I</option>';
+            Lokasi_options_str  += '<option value="Dekorasi Rustic Sukoharjo">Dekorasi Rustic Sukoharjo</option>';
+            Lokasi_options_str  += '<option value="Edi Genteng Nambangan">Edi Genteng Nambangan</option>';
+            Lokasi_options_str  += '<option value="Fadhil Hidroponik">Fadhil Hidroponik</option>';
+            Lokasi_options_str  += '<option value="GIYANTO Pengrajin Lurik ATBM">GIYANTO Pengrajin Lurik ATBM</option>';
+            Lokasi_options_str  += '<option value="GOR Badminton Balaidesa">GOR Badminton Balaidesa</option>';
+            Lokasi_options_str  += '<option value="Genteng Pres Aisyah Nur Khasanah">Genteng Pres Aisyah Nur Khasanah</option>';
+            Lokasi_options_str  += '<option value="Genteng Pres Eko Putra">Genteng Pres Eko Putra</option>';
+            Lokasi_options_str  += '<option value="Genteng Pres Raffi Putra (mbak Yekti)">Genteng Pres Raffi Putra (mbak Yekti)</option>';
+            Lokasi_options_str  += '<option value="Genteng Pres Wiyono Aisyah">Genteng Pres Wiyono Aisyah</option>';
+            Lokasi_options_str  += '<option value="Genteng Soka Produks (Sriyono)">Genteng Soka Produks (Sriyono)</option>';
+            Lokasi_options_str  += '<option value="Genteng Sokka Djaya">Genteng Sokka Djaya</option>';
+            Lokasi_options_str  += '<option value="Genteng Sunarno (Merk Sokka Djaja)">Genteng Sunarno (Merk Sokka Djaja)</option>';
+            Lokasi_options_str  += '<option value="Genteng Yeni Putra Suyadi">Genteng Yeni Putra Suyadi</option>';
+            Lokasi_options_str  += '<option value="HANI Pigura">HANI Pigura</option>';
+            Lokasi_options_str  += '<option value="Hilal Lurik">Hilal Lurik</option>';
+            Lokasi_options_str  += '<option value="Industri Genteng Groya Lestari">Industri Genteng Groya Lestari</option>';
+            Lokasi_options_str  += '<option value="Industri Genteng Mantili">Industri Genteng Mantili</option>';
+            Lokasi_options_str  += '<option value="Industri Genteng Pak Suryadi">Industri Genteng Pak Suryadi</option>';
+            Lokasi_options_str  += '<option value="Industri Genteng Pak Tris">Industri Genteng Pak Tris</option>';
+            Lokasi_options_str  += '<option value="Industri Genteng Sari Bumi (Pak Pratama)">Industri Genteng Sari Bumi (Pak Pratama)</option>';
+            Lokasi_options_str  += '<option value="Industri Genteng Sari Bumi (Pak Sriyono)">Industri Genteng Sari Bumi (Pak Sriyono)</option>';
+            Lokasi_options_str  += '<option value="Industri Genteng Soka Lestari">Industri Genteng Soka Lestari</option>';
+            Lokasi_options_str  += '<option value="Industri Genteng Sokka Produk">Industri Genteng Sokka Produk</option>';
+            Lokasi_options_str  += '<option value="Industri Genteng Super Adi Jaya">Industri Genteng Super Adi Jaya</option>';
+            Lokasi_options_str  += '<option value="Industri Genteng Wahyu Putra">Industri Genteng Wahyu Putra</option>';
+            Lokasi_options_str  += '<option value="Industri Genteng mbak Haryanti">Industri Genteng mbak Haryanti</option>';
+            Lokasi_options_str  += '<option value="Irsam Farm">Irsam Farm</option>';
+            Lokasi_options_str  += '<option value="KWT Makmur Desa Grogol">KWT Makmur Desa Grogol</option>';
+            Lokasi_options_str  += '<option value="Kantor Balai Desa Grogol, Weru">Kantor Balai Desa Grogol, Weru</option>';
+            Lokasi_options_str  += '<option value="Kelik Pengrajin Wuwung">Kelik Pengrajin Wuwung</option>';
+            Lokasi_options_str  += '<option value="Kelompok Bermain Tp Candi Asri">Kelompok Bermain Tp Candi Asri</option>';
+            Lokasi_options_str  += '<option value="Kelompok Mebel Karya Nyata">Kelompok Mebel Karya Nyata</option>';
+            Lokasi_options_str  += '<option value="Lurik Pangestu">Lurik Pangestu</option>';
+            Lokasi_options_str  += '<option value="Lurik Tenun Sari">Lurik Tenun Sari</option>';
+            Lokasi_options_str  += '<option value="MIN 5 Sukoharjo">MIN 5 Sukoharjo</option>';
+            Lokasi_options_str  += '<option value="MTA Cabang Weru 03">MTA Cabang Weru 03</option>';
+            Lokasi_options_str  += '<option value="Majid Sayyidul Chabib Abdulloh Ibn Baqi">Majid Sayyidul Chabib Abdulloh Ibn Baqi</option>';
+            Lokasi_options_str  += '<option value="Masjid Al Falah">Masjid Al Falah</option>';
+            Lokasi_options_str  += '<option value="Masjid Al Ikhlas">Masjid Al Ikhlas</option>';
+            Lokasi_options_str  += '<option value="Masjid Al-Munawaroh">Masjid Al-Munawaroh</option>';
+            Lokasi_options_str  += '<option value="Masjid Darussalam">Masjid Darussalam</option>';
+            Lokasi_options_str  += '<option value="Masjid Nur Hidayatullah">Masjid Nur Hidayatullah</option>';
+            Lokasi_options_str  += '<option value="Masjid Nurrochman Nambangan Grogol">Masjid Nurrochman Nambangan Grogol</option>';
+            Lokasi_options_str  += '<option value="Masjid Nurul Iman">Masjid Nurul Iman</option>';
+            Lokasi_options_str  += '<option value="Mebel Pak Marimin">Mebel Pak Marimin</option>';
+            Lokasi_options_str  += '<option value="Meubel Lina Jaya">Meubel Lina Jaya</option>';
+            Lokasi_options_str  += '<option value="Mushola Al Huda">Mushola Al Huda</option>';
+            Lokasi_options_str  += '<option value="Mushola Al Ihsan">Mushola Al Ihsan</option>';
+            Lokasi_options_str  += '<option value="Mushola Al-Mukmin Kresan">Mushola Al-Mukmin Kresan</option>';
+            Lokasi_options_str  += '<option value="Mushola Baitus Salam">Mushola Baitus Salam</option>';
+            Lokasi_options_str  += '<option value="Mushola Nur Rochim Nambangan">Mushola Nur Rochim Nambangan</option>';
+            Lokasi_options_str  += '<option value="Ngadiyo Pembuat Bahan Bakar Arang">Ngadiyo Pembuat Bahan Bakar Arang</option>';
+            Lokasi_options_str  += '<option value="PG (Dwi Tunggal) Sugeng Riyanto">PG (Dwi Tunggal) Sugeng Riyanto</option>';
+            Lokasi_options_str  += '<option value="PG Agung Putra">PG Agung Putra</option>';
+            Lokasi_options_str  += '<option value="PG Andri Putra (Bp. Slamet Cokro)">PG Andri Putra (Bp. Slamet Cokro)</option>';
+            Lokasi_options_str  += '<option value="PG Bapak Sriyono">PG Bapak Sriyono</option>';
+            Lokasi_options_str  += '<option value="PG Dayar Putra (Gatot Priyanto)">PG Dayar Putra (Gatot Priyanto)</option>';
+            Lokasi_options_str  += '<option value="PG Dua Sekawan">PG Dua Sekawan</option>';
+            Lokasi_options_str  += '<option value="PG Eka Sokka Produks (Desi Aqhtar)">PG Eka Sokka Produks (Desi Aqhtar)</option>';
+            Lokasi_options_str  += '<option value="PG Eko Putra (Mas Eko/Danik)">PG Eko Putra (Mas Eko/Danik)</option>';
+            Lokasi_options_str  += '<option value="PG Griya Prima Pak Samino">PG Griya Prima Pak Samino</option>';
+            Lokasi_options_str  += '<option value="PG KPS Produk (Genjer)">PG KPS Produk (Genjer)</option>';
+            Lokasi_options_str  += '<option value="PG Mas Sunimin">PG Mas Sunimin</option>';
+            Lokasi_options_str  += '<option value="PG Muda Jaya">PG Muda Jaya</option>';
+            Lokasi_options_str  += '<option value="PG Mulya Group">PG Mulya Group</option>';
+            Lokasi_options_str  += '<option value="PG Mulya Lestari">PG Mulya Lestari</option>';
+            Lokasi_options_str  += '<option value="PG Mustika Tamto M">PG Mustika Tamto M</option>';
+            Lokasi_options_str  += '<option value="PG Nugroho Lestari">PG Nugroho Lestari</option>';
+            Lokasi_options_str  += '<option value="PG Pak Slamet Rt">PG Pak Slamet Rt</option>';
+            Lokasi_options_str  += '<option value="PG Primasoka">PG Primasoka</option>';
+            Lokasi_options_str  += '<option value="PG Riyanto Gareng">PG Riyanto Gareng</option>';
+            Lokasi_options_str  += '<option value="PG Rizki Fajar">PG Rizki Fajar</option>';
+            Lokasi_options_str  += '<option value="PG Sari Bumi Super">PG Sari Bumi Super</option>';
+            Lokasi_options_str  += '<option value="PG Sari Indah (Sigit Hidayat)">PG Sari Indah (Sigit Hidayat)</option>';
+            Lokasi_options_str  += '<option value="PG Sari Indah (Suwadi)">PG Sari Indah (Suwadi)</option>';
+            Lokasi_options_str  += '<option value="PG Seno">PG Seno</option>';
+            Lokasi_options_str  += '<option value="PG Setia Jaya Sokka">PG Setia Jaya Sokka</option>';
+            Lokasi_options_str  += '<option value="PG Sokka Products (Suyatno)">PG Sokka Products (Suyatno)</option>';
+            Lokasi_options_str  += '<option value="PG Sokka Produks & sigit putra">PG Sokka Produks & sigit putra</option>';
+            Lokasi_options_str  += '<option value="PG Sokka Produks Rini">PG Sokka Produks Rini</option>';
+            Lokasi_options_str  += '<option value="PG Tanah Mas Bp. Sutarno">PG Tanah Mas Bp. Sutarno</option>';
+            Lokasi_options_str  += '<option value="PG Trie Berlian Sokka Produk">PG Trie Berlian Sokka Produk</option>';
+            Lokasi_options_str  += '<option value="PG Wika Putra">PG Wika Putra</option>';
+            Lokasi_options_str  += '<option value="PG Wira Mulya (Suyitno)">PG Wira Mulya (Suyitno)</option>';
+            Lokasi_options_str  += '<option value="PG Wisnu Eka Putra">PG Wisnu Eka Putra</option>';
+            Lokasi_options_str  += '<option value="Pengrajin Genteng Pres Rizky Dibyo">Pengrajin Genteng Pres Rizky Dibyo</option>';
+            Lokasi_options_str  += '<option value="Pengrajin Wuwung SAPTO GROUP">Pengrajin Wuwung SAPTO GROUP</option>';
+            Lokasi_options_str  += '<option value="Prima Press Marsono">Prima Press Marsono</option>';
+            Lokasi_options_str  += '<option value="Produk Genteng Pres "Rahma Produk"">Produk Genteng Pres "Rahma Produk"</option>';
+            Lokasi_options_str  += '<option value="Produk Genteng Pres Darma Putra">Produk Genteng Pres Darma Putra</option>';
+            Lokasi_options_str  += '<option value="Produk Genteng Pres Yanto Putro">Produk Genteng Pres Yanto Putro</option>';
+            Lokasi_options_str  += '<option value="Produksi Genteng "Rosyid Putro/Budi"">Produksi Genteng "Rosyid Putro/Budi"</option>';
+            Lokasi_options_str  += '<option value="Produksi Genteng Edy Putra">Produksi Genteng Edy Putra</option>';
+            Lokasi_options_str  += '<option value="Produksi Genteng Margono">Produksi Genteng Margono</option>';
+            Lokasi_options_str  += '<option value="Produksi Genteng Pres Mas Heri">Produksi Genteng Pres Mas Heri</option>';
+            Lokasi_options_str  += '<option value="Produksi Genteng Press Sumino Sum">Produksi Genteng Press Sumino Sum</option>';
+            Lokasi_options_str  += '<option value="Produsen Genteng Sokka Produk "Azzis Ahmad Wohar)">Produsen Genteng Sokka Produk "Azzis Ahmad Wohar)</option>';
+            Lokasi_options_str  += '<option value="Rejo Tani">Rejo Tani</option>';
+            Lokasi_options_str  += '<option value="Rista Jaya Alumunium dan Kaca">Rista Jaya Alumunium dan Kaca</option>';
+            Lokasi_options_str  += '<option value="Royal Jaya Sangkar">Royal Jaya Sangkar</option>';
+            Lokasi_options_str  += '<option value="Rumah Sunat Wahana Husada">Rumah Sunat Wahana Husada</option>';
+            Lokasi_options_str  += '<option value="SDN Grogol 01 Weru">SDN Grogol 01 Weru</option>';
+            Lokasi_options_str  += '<option value="SDN Grogol 02 Weru">SDN Grogol 02 Weru</option>';
+            Lokasi_options_str  += '<option value="SMP Muhammadiyah Grogol Weru">SMP Muhammadiyah Grogol Weru</option>';
+            Lokasi_options_str  += '<option value="Sari Puyuh Farm">Sari Puyuh Farm</option>';
+            Lokasi_options_str  += '<option value="Sarung Tenun Bu Endang">Sarung Tenun Bu Endang</option>';
+            Lokasi_options_str  += '<option value="Sis Wuwung Seng">Sis Wuwung Seng</option>';
+            Lokasi_options_str  += '<option value="SokkaProduks Rini Fara">SokkaProduks Rini Fara</option>';
+            Lokasi_options_str  += '<option value="Sulardi Genteng Press">Sulardi Genteng Press</option>';
+            Lokasi_options_str  += '<option value="Suparno PG + Jar Putra">Suparno PG + Jar Putra</option>';
+            Lokasi_options_str  += '<option value="TPA/TPQ Al Hidayah">TPA/TPQ Al Hidayah</option>';
+            Lokasi_options_str  += '<option value="Tenun Lurik ATBM "REJEKI" Bulu Domba">Tenun Lurik ATBM "REJEKI" Bulu Domba</option>';
+            Lokasi_options_str  += '<option value="Toko Genteng Mustika Bumiloka">Toko Genteng Mustika Bumiloka</option>';
+            Lokasi_options_str  += '<option value="UKM Kismo Aji">UKM Kismo Aji</option>';
+            Lokasi_options_str  += '<option value="Wuwung Rapi">Wuwung Rapi</option>';
+            Lokasi_options_str  += '<option value="Wuwung Talang Seng "Rukiman"">Wuwung Talang Seng "Rukiman"</option>';
+            Lokasi_options_str  += '<option value="Wuwung talang seng galvalum">Wuwung talang seng galvalum</option>';
+            Lokasi_options_str  += '<option value="Yanto Wuwung">Yanto Wuwung</option>';
+            sel_Lokasi.innerHTML = Lokasi_options_str;
+            div_Lokasi.appendChild(sel_Lokasi);
+            var lab_Lokasi = document.createElement('div');
+            lab_Lokasi.innerHTML = 'Lokasi';
+            lab_Lokasi.className = 'filterlabel';
+            div_Lokasi.appendChild(lab_Lokasi);
+            var reset_Lokasi = document.createElement('div');
+            reset_Lokasi.innerHTML = 'clear filter';
+            reset_Lokasi.className = 'filterlabel';
+            reset_Lokasi.onclick = function() {
+                var options = document.getElementById("sel_Lokasi").options;
                 for (var i=0; i < options.length; i++) {
                     options[i].selected = false;
                 }
                 filterFunc();
             };
-            div_Kategori.appendChild(reset_Kategori);
-            document.getElementById("menu").appendChild(
-                document.createElement("div"));
-            var div_Legenda = document.createElement('div');
-            div_Legenda.id = "div_Legenda";
-            div_Legenda.className= "filterselect";
-            document.getElementById("menu").appendChild(div_Legenda);
-            sel_Legenda = document.createElement('select');
-            sel_Legenda.multiple = true;
-            sel_Legenda.size = 9;
-            sel_Legenda.id = "sel_Legenda";
-            var Legenda_options_str = "<option value='' unselected></option>";
-            sel_Legenda.onchange = function(){filterFunc()};
-            Legenda_options_str  += '<option value="Embung">Embung</option>';
-            Legenda_options_str  += '<option value="Jalan Desa">Jalan Desa</option>';
-            Legenda_options_str  += '<option value="Jalan Kabupaten">Jalan Kabupaten</option>';
-            Legenda_options_str  += '<option value="Kebun">Kebun</option>';
-            Legenda_options_str  += '<option value="Lapangan">Lapangan</option>';
-            Legenda_options_str  += '<option value="Pemakaman">Pemakaman</option>';
-            Legenda_options_str  += '<option value="Pemukiman">Pemukiman</option>';
-            Legenda_options_str  += '<option value="Sawah">Sawah</option>';
-            Legenda_options_str  += '<option value="Sungai">Sungai</option>';
-            sel_Legenda.innerHTML = Legenda_options_str;
-            div_Legenda.appendChild(sel_Legenda);
-            var lab_Legenda = document.createElement('div');
-            lab_Legenda.innerHTML = 'Legenda';
-            lab_Legenda.className = 'filterlabel';
-            div_Legenda.appendChild(lab_Legenda);
-            var reset_Legenda = document.createElement('div');
-            reset_Legenda.innerHTML = 'clear filter';
-            reset_Legenda.className = 'filterlabel';
-            reset_Legenda.onclick = function() {
-                var options = document.getElementById("sel_Legenda").options;
-                for (var i=0; i < options.length; i++) {
-                    options[i].selected = false;
-                }
-                filterFunc();
-            };
-            div_Legenda.appendChild(reset_Legenda);
+            div_Lokasi.appendChild(reset_Lokasi);
         L.ImageOverlay.include({
             getBounds: function () {
                 return this._bounds;
